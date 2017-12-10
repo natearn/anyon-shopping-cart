@@ -1,5 +1,7 @@
 import React from "react"
 
+import "./Cart.css"
+
 const Cart = ({
 	title,
 	products,
@@ -7,7 +9,7 @@ const Cart = ({
 	remove,
 	clear,
 }) => (
-	<section>
+	<section className="cart">
 		<header>
 			<h1>{title}</h1>
 			<button onClick={add}>Add</button>
