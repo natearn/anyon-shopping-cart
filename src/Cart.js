@@ -23,7 +23,7 @@ const Cart = ({
 					<th>Comments</th>
 					<th>Price</th>
 					<th>Tax</th>
-					<th>Total</th>
+					<th>Total Items</th>
 				</tr>
 			</thead>
 			<tbody>
