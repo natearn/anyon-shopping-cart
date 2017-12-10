@@ -1,6 +1,7 @@
 import React from "react"
 
 import "./Cart.css"
+import Product from "./Product"
 
 const dummyData = {
     title: "A Title",
@@ -45,11 +46,11 @@ const Cart = ({
 			</thead>
 			<tbody>
 				{products.map((item,idx) => (
-					<CartRow
+					<Product
 						key={item.id}
 						index={idx}
-						remove={() => remove(item)}
 						{...item}
+						remove={() => remove(idx)}
 					/>
 				))}
 			</tbody>
@@ -58,34 +59,8 @@ const Cart = ({
 )
 
 
-const toEuros = n => n.toLocaleString('de-DE',{
-	style: "currency",
-	currency: "EUR",
+
 })
 
-const toPercent = n => n.toLocaleString('de-DE',{
-	style: "percent",
-})
-
-const calcTotal = (price,tax) => toEuros(price * (1 + tax))
-
-const CartRow = ({
-	index,
-	remove,
-	name,
-	comment,
-	price,
-	tax,
-}) => (
-	<tr>
-		<td>{index}</td>
-		<td>{name}</td>
-		<td>{comment}</td>
-		<td>{toEuros(price)}</td>
-		<td>{toPercent(tax)}</td>
-		<td>{calcTotal(price,tax)}</td>
-		<td><button onClick={remove}>×</button></td>
-	</tr>
-)
 
 export default () => Cart(dummyData)

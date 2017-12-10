@@ -1,0 +1,10 @@
+
+.product {
+	border-top: 1px solid lightgrey;
+}
+
+.product td {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
