@@ -1,23 +1,9 @@
 import React from "react"
-
+import { connect } from "react-redux"
 import "./Cart.css"
 import Product from "./Product"
 
-const dummyData = {
-    title: "A Title",
-    products: [1,2,3,4].map(id => ({
-        id: id,
-        name: "Product " + id,
-        comment: "This is a product comment that is long enough to exceed the size of its container.",
-        price: 12.50,
-        tax: 0.11,
-    })),
-    add: () => console.log("ADD"),
-    remove: ({name}) => console.log("REMOVE " + name),
-    clear: () => console.log("CLEAR"),
-}
-
-const Cart = ({
+export const Cart = ({
 	title,
 	products,
 	add,
@@ -58,9 +44,46 @@ const Cart = ({
 	</section>
 )
 
+// a Redux reducer is just a state machine
+let simpleCounter = 1000; // because I'm being lazy right now
+export const runCart = (list = [], action) => {
+	switch (action.type) {
+		case "CLEAR_CART":
+			return []
+		case "REMOVE_PRODUCT":
+			const idx = action.index
+			return [
+				...list.slice(0,idx),
+				...list.slice(idx + 1)
+			]
+		case "ADD_PRODUCT":
+			const id = simpleCounter++
+			return [
+				...list,
+				{
+					id: id,
+					name: "Product " + id,
+					comment: "This is a product comment that is long enough to exceed the size of its container.",
+					price: 12.50,
+					tax: 0.11,
+				}
+			]
+		default:
+			return list
+	}
+}
 
+// The default export is the stateful component
 
+const mapStateToProps = items => ({
+	title: "Your Cart",
+	products: items,
 })
 
+const mapDispatchToProps = {
+	add: () => ({type: "ADD_PRODUCT"}),
+	remove: idx => ({type: "REMOVE_PRODUCT", index: idx}),
+	clear: () => ({type: "CLEAR_CART"}),
+}
 
-export default () => Cart(dummyData)
+export default connect(mapStateToProps,mapDispatchToProps)(Cart)
