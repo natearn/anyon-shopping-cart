@@ -12,8 +12,10 @@ const Cart = ({
 	<section className="cart">
 		<header>
 			<h1>{title}</h1>
-			<button onClick={add}>Add</button>
-			<button onClick={clear}>Clear</button>
+			<span>
+				<button onClick={add}>Add</button>
+				<button onClick={clear}>Clear</button>
+			</span>
 		</header>
 		<table>
 			<thead>
@@ -24,6 +26,7 @@ const Cart = ({
 					<th>Price</th>
 					<th>Tax</th>
 					<th>Total Items</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -40,7 +43,17 @@ const Cart = ({
 	</section>
 )
 
-const calcTotal = (price,tax) => price * (1 + tax)
+
+const toEuros = n => n.toLocaleString('de-DE',{
+	style: "currency",
+	currency: "EUR",
+})
+
+const toPercent = n => n.toLocaleString('de-DE',{
+	style: "percent",
+})
+
+const calcTotal = (price,tax) => toEuros(price * (1 + tax))
 
 const CartRow = ({
 	index,
@@ -54,8 +67,8 @@ const CartRow = ({
 		<td>{index}</td>
 		<td>{name}</td>
 		<td>{comment}</td>
-		<td>{price}</td>
-		<td>{tax}</td>
+		<td>{toEuros(price)}</td>
+		<td>{toPercent(tax)}</td>
 		<td>{calcTotal(price,tax)}</td>
 		<td><button onClick={remove}>×</button></td>
 	</tr>

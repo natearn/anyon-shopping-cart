@@ -1,4 +1,35 @@
 
 .cart > header {
 	display: flex;
+	justify-content: space-between;
+}
+
+.cart > header button {
+	margin-left: 2em;
+}
+
+.cart > table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.cart > table td {
+	max-width: 300px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.cart > table th ,
+.cart > table td {
+	text-align: left;
+	padding: 10px;
+}
+
+.cart > table > thead {
+	color: white;
+	background: darkblue;
+}
+
+.cart > table > tbody td {
+	border-bottom: 1px solid grey;
 }
