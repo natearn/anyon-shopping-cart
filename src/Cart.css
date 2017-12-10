@@ -1,7 +1,12 @@
 
+.cart {
+	padding: 2em;
+}
+
 .cart > header {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .cart > header button {
@@ -21,6 +26,7 @@
 }
 .cart > table th ,
 .cart > table td {
+	max-width: 300px;
 	text-align: left;
 	padding: 10px;
 }
@@ -32,4 +38,7 @@
 
 .cart > table > tbody td {
 	border-bottom: 1px solid grey;
+
+.cart > table > tbody {
+	background: white;
 }
