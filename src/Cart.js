@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import "./Cart.css"
 import Product from "./Product"
+import Header from "./Header"
 
 export const Cart = ({
 	title,
@@ -11,13 +12,7 @@ export const Cart = ({
 	clear,
 }) => (
 	<section className="cart">
-		<header>
-			<h1>{title}</h1>
-			<span>
-				<button onClick={add}>Add</button>
-				<button onClick={clear}>Clear</button>
-			</span>
-		</header>
+		<Header {...{title,add,clear}} />
 		<table>
 			<thead>
 				<tr>
