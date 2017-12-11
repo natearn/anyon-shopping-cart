@@ -19,3 +19,13 @@
 .table > tbody {
 	background: white;
 }
+
+.table > tbody > tr {
+	border-top: 1px solid lightgrey;
+}
+
+.table > tbody td {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
