@@ -1,16 +1,8 @@
 
 .cart {
 	padding: 2em;
-}
-
-.cart > header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.cart > header button {
-	margin-left: 2em;
+	max-width: 800px;
+	margin: auto;
 }
 
 .cart > table {
