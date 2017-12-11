@@ -2,7 +2,7 @@ import React from "react"
 import "./Summary.css"
 import { asCurrency, asPercent } from "./format"
 
-const Summary = ({products}) => {
+const Summary = ({products = []}) => {
 
 	const taxes = products.reduce(
 		(ts,{price,tax}) => {
