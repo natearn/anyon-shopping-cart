@@ -62,7 +62,7 @@ export const runCart = (list = [], action) => {
 					name: "Product " + id,
 					comment: "This is a product comment that is long enough to exceed the size of its container.",
 					price: 12.50,
-					tax: 0.11,
+					tax: ([0.11,0.09,0.13])[(id % 3)]
 				}
 			]
 		default:
