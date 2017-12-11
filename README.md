@@ -10,6 +10,8 @@ I could keep working on this for hours. I'd like to add proptypes and more tests
 
 Some project organization decision were made by create-react-app (like the flat `src` directory).
 
+For more information about my process, take a look at the commit log!
+
 ## Usage
 
 I haven't really looked at deployment procedures from create-react-app, so I'm hoping that you're familiar with the tool.
