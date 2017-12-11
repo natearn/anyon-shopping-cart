@@ -6,14 +6,13 @@ import Header from "./Header"
 import Summary from "./Summary"
 
 export const Cart = ({
-	title,
 	products,
 	add,
 	remove,
 	clear,
 }) => (
 	<section className="cart">
-		<Header {...{title,add,clear}} />
+		<Header {...{add,clear}} />
 		<table>
 			<thead>
 				<tr>
@@ -73,7 +72,6 @@ export const runCart = (list = [], action) => {
 // The default export is the stateful component
 
 const mapStateToProps = items => ({
-	title: "Your Cart",
 	products: items,
 })
 

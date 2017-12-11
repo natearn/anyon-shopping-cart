@@ -1,7 +1,11 @@
 import React from "react"
 import "./Header.css"
 
-const Header = ({title,add,clear}) => (
+const Header = ({
+	title = 'Your Cart',
+	add,
+	clear,
+}) => (
 	<header className="header">
 		<h1>{title}</h1>
 		<span>
@@ -10,4 +14,5 @@ const Header = ({title,add,clear}) => (
 		</span>
 	</header>
 )
+
 export default Header
