@@ -6,7 +6,7 @@ A simple shopping cart written in React with Redux.
 
 This is my first redux application, and I may have been a bit over-zealous with the architecture.
 
-I could keep working on this for hours. I'd like to add proptypes and more tests, but I've already spent too much time on this. It's been fun.
+I could keep working on this for hours. I'd like to add proptypes and more tests (I didn't write unit tests for the reducer!), but I've already spent too much time on this. It's been fun.
 
 Some project organization decision were made by create-react-app (like the flat `src` directory).
 
