@@ -1,8 +1,8 @@
 import React from "react"
 import { connect } from "react-redux"
 import "./Cart.css"
-import Product from "./Product"
 import Header from "./Header"
+import Table from "./Table"
 import Summary from "./Summary"
 
 export const Cart = ({
@@ -13,29 +13,7 @@ export const Cart = ({
 }) => (
 	<section className="cart">
 		<Header {...{add,clear}} />
-		<table>
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Name</th>
-					<th>Comments</th>
-					<th>Price</th>
-					<th>Tax</th>
-					<th>Total Items</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				{products.map((item,idx) => (
-					<Product
-						key={item.id}
-						index={idx}
-						{...item}
-						remove={() => remove(idx)}
-					/>
-				))}
-			</tbody>
-		</table>
+		<Table {...{products,remove}} />
 		<Summary {...{products}} />
 	</section>
 )

@@ -1,0 +1,21 @@
+
+.table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.table th ,
+.table td {
+	max-width: 300px;
+	text-align: left;
+	padding: 10px;
+}
+
+.table > thead {
+	color: white;
+	background: darkblue;
+}
+
+.table > tbody {
+	background: white;
+}
