@@ -3,7 +3,7 @@ import { asCurrency, asPercent } from "./format"
 import "./Table.css"
 
 const Table = ({
-	products,
+	products = [],
 	remove,
 }) => (
 	<table className="table">
