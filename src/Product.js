@@ -1,5 +1,6 @@
 import React from "react"
 import "./Product.css"
+import { asCurrency, asPercent } from "./format"
 
 const Product = ({
 	index,
@@ -9,17 +10,6 @@ const Product = ({
 	tax,
 	remove,
 }) => {
-
-	// TODO: make locale and currency configurable
-	let locale = 'de-DE'
-	let currency = 'EUR'
-
-	const asPercent = n => n.toLocaleString(locale,{style:"percent"})
-
-	const asCurrency = n => n.toLocaleString(locale,{
-		style: "currency",
-		currency: currency,
-	})
 
 	const total = asCurrency(price * (1 + tax))
 
