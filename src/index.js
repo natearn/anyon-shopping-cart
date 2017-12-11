@@ -1,17 +1,11 @@
 import React from 'react'
-import { render } from 'react-dom';
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import './index.css';
-import Cart, { runCart } from './Cart';
-import registerServiceWorker from './registerServiceWorker';
-
-const store = createStore(runCart)
+import { render } from 'react-dom'
+import './index.css'
+import Cart from './Cart'
+import registerServiceWorker from './registerServiceWorker'
 
 render(
-  <Provider store={store}>
-    <Cart />
-  </Provider>,
-  document.getElementById('root')
+	<Cart />,
+	document.getElementById('root')
 )
-registerServiceWorker();
+registerServiceWorker()

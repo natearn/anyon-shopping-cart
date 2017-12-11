@@ -1,5 +1,6 @@
 import React from "react"
-import { connect } from "react-redux"
+import { Provider, connect } from "react-redux"
+import { createStore } from "redux"
 import "./Cart.css"
 import Header from "./Header"
 import Table from "./Table"
@@ -47,7 +48,7 @@ export const runCart = (list = [], action) => {
 	}
 }
 
-// The default export is the stateful component
+// The default export is the stateful, autonomous component
 
 const mapStateToProps = items => ({
 	products: items,
@@ -59,4 +60,14 @@ const mapDispatchToProps = {
 	clear: () => ({type: "CLEAR_CART"}),
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Cart)
+export default class AutoCart extends React.Component {
+	state = {store: createStore(runCart)}
+	render() {
+		const CartContainer = connect(mapStateToProps,mapDispatchToProps)(Cart)
+		return (
+			<Provider store={this.state.store}>
+				<CartContainer />
+			</Provider>
+		)
+	}
+}
