@@ -1,0 +1,32 @@
+.summary {
+	float: right;
+	clear: right;
+	min-width: 250px;
+	background: white;
+}
+.summary h2 {
+	font-size: 1em;
+	margin: 0.5em 0;
+}
+
+.summary > div {
+	padding: 0.5em;
+}
+
+.summary > div:last-child {
+	color: blue;
+}
+
+.subtax {
+	font-size: small;
+}
+
+.summary > div:not(:last-child) {
+	border-bottom: 1px solid lightgrey;
+}
+
+.subtax span:last-child,
+.summary > div > h2 > span {
+	float: right;
+	clear: right;
+}

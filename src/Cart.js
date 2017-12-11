@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import "./Cart.css"
 import Product from "./Product"
 import Header from "./Header"
+import Summary from "./Summary"
 
 export const Cart = ({
 	title,
@@ -36,6 +37,7 @@ export const Cart = ({
 				))}
 			</tbody>
 		</table>
+		<Summary {...{products}} />
 	</section>
 )
 
